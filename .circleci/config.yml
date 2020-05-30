@@ -44,7 +44,7 @@ workflows:
           requires:
             - test_and_build_jar
           family: email-service-dev
-          cluster-name: email-service-cluster-dev
+          cluster-name: twillo-service-cluster-dev
           container-image-name-updates: 'container=email-service-container-dev,tag=${CIRCLE_SHA1}'
   promote_build_to_stage:
     jobs:
@@ -65,7 +65,7 @@ workflows:
           requires:
             - tag_buit_image
           family: email-service-staging
-          cluster-name: email-service-cluster-staging
+          cluster-name: twillo-service-cluster-staging
           container-image-name-updates: 'container=email-service-container,tag=${CIRCLE_TAG}'
 
 
